@@ -68,7 +68,11 @@ def autoClicker():
     if not autoclicker:
         autoclicker = True
         while autoclicker:
-            print('sus')  
+            if UpLastPressed:
+                increment()
+            elif DownLastPressed:
+                decrement()
+            
     elif autoclicker:
         autoclicker = False
 
@@ -96,7 +100,7 @@ text.bind('<Double-Button-1>', tripleOrNah)
 text.bind('<Enter>', yellow)
 text.bind('<Leave>', update)
 
-#Window events
+#Window event
 window.bind('<Up>', increment)
 window.bind('<+>', increment)
 window.bind('<Down>', decrement)
