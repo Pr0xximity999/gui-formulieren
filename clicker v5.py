@@ -1,4 +1,3 @@
-from operator import truediv
 from tkinter import *
 from time import sleep
 
@@ -69,8 +68,10 @@ def autoClicker():
         autoclicker = True
         while autoclicker:
             if UpLastPressed:
+                sleep(0.2)
                 increment()
             elif DownLastPressed:
+                sleep(0.2)
                 decrement()
             
     elif autoclicker:

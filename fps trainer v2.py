@@ -134,6 +134,9 @@ def start():
 #Updates the timer when the text is updated
 def updateBeginning(event1, event2, event3):
     global timer
+    print(event1)
+    print(event2)    
+    print(event3)
     timer.configure(text=f'Time remaining: {time.get()}')
 
 #Starting setup

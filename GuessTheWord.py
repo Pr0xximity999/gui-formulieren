@@ -1,4 +1,3 @@
-from operator import truediv
 from string import ascii_lowercase
 from tkinter import *
 from tkinter import messagebox
@@ -58,23 +57,17 @@ def start():
     clearScreen()
 
     #Makes the stringvars for the spinboxes
-    spinbox1 = StringVar(window)
-    spinbox2 = StringVar(window)
-    spinbox3 = StringVar(window)
-    spinbox4 = StringVar(window)
-    spinbox5 = StringVar(window)
-    spinbox6 = StringVar(window)
-    spinbox7 = StringVar(window)
-    spinboxes = [spinbox1, spinbox2, spinbox3, spinbox4, spinbox5, spinbox6, spinbox7]
-
+    spinboxes = []
     #Places all the spinboxes
     wordLen = len(theWord.get())
     for i in range(wordLen): 
         ranNum = random.randint(0, 3)
+        spinboxsv = StringVar(window)
+        spinboxes.append(spinboxsv)
         sb = Spinbox(   
                     window,
                     values=[theWord.get()[i] if x == ranNum else random.choice(ascii_lowercase) for x in range(4)], 
-                    textvariable=spinboxes[i], 
+                    textvariable=spinboxsv, 
                     wrap=True, 
                     font=(20))
         sb.configure(state='readonly')

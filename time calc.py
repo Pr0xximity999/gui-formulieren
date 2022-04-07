@@ -19,7 +19,9 @@ def updateDays(arg1='', arg2='', arg3=''):
     if int(year.get()) % 4 == 0 and monthCombo.get() == 'Feb':
         dayCombo.configure(values=months[monthCombo.get()] + ['29'])
         
-    if int(dayCombo.get()) > months[monthCombo.get()][-1]: dayCombo.current(months[monthCombo.get()][-1])
+    if int(dayCombo.get()) > months[monthCombo.get()][-1]: 
+        dayCombo.current(months[monthCombo.get()][-1])
+        return
     dayCombo.configure(values=months[monthCombo.get()])
 
 
@@ -47,7 +49,7 @@ def calcDate(d2=tuple):
         messagebox.showwarning('Resultaat', f'Deze datum is vandaag')
 
 
-#Makes the months with their respecting days(Leap years will be modulated)
+#Makes the months with their respecting days
 months = {  
             'Jan' : [i for i in range(1, 32)],
             'Feb' : [i for i in range(1, 29)], 
