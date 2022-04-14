@@ -1,1 +1,5 @@
-print(''.join([ v.upper() if k % 2 == 0 else v.lower() for k, v in enumerate(input('Voer text in >>'))]))
+listlist = ['a', 'b']
+if listlist[2]:
+    print('hey')
+else:
+    print("no")
